@@ -9,12 +9,15 @@
 /* Begin PBXBuildFile section */
 		5A3D98BE2587C98000C737CC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A3D98BD2587C98000C737CC /* AppDelegate.swift */; };
 		5A3D98C02587C98000C737CC /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A3D98BF2587C98000C737CC /* SceneDelegate.swift */; };
-		5A3D98C22587C98000C737CC /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A3D98C12587C98000C737CC /* ViewController.swift */; };
-		5A3D98C52587C98000C737CC /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5A3D98C32587C98000C737CC /* Main.storyboard */; };
 		5A3D98C72587C98200C737CC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5A3D98C62587C98200C737CC /* Assets.xcassets */; };
 		5A3D98CA2587C98200C737CC /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5A3D98C82587C98200C737CC /* LaunchScreen.storyboard */; };
 		5A3D98D52587C98300C737CC /* MiniProjetoTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A3D98D42587C98300C737CC /* MiniProjetoTests.swift */; };
 		5A3D98E02587C98300C737CC /* MiniProjetoUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A3D98DF2587C98300C737CC /* MiniProjetoUITests.swift */; };
+		5A3D98F82587CA9E00C737CC /* ProductsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A3D98F72587CA9E00C737CC /* ProductsViewController.swift */; };
+		5A3D98FD2587D0E400C737CC /* ConnectionManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A3D98FC2587D0E400C737CC /* ConnectionManager.swift */; };
+		5A3D99022587D2FC00C737CC /* Enums.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A3D99012587D2FC00C737CC /* Enums.swift */; };
+		5A3D99072587D54300C737CC /* ProductsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A3D99062587D54300C737CC /* ProductsViewModel.swift */; };
+		5A3D990C2587E2E900C737CC /* Product.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A3D990B2587E2E900C737CC /* Product.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -38,8 +41,6 @@
 		5A3D98BA2587C98000C737CC /* MiniProjeto.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MiniProjeto.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5A3D98BD2587C98000C737CC /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		5A3D98BF2587C98000C737CC /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		5A3D98C12587C98000C737CC /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		5A3D98C42587C98000C737CC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		5A3D98C62587C98200C737CC /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		5A3D98C92587C98200C737CC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		5A3D98CB2587C98200C737CC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -49,6 +50,11 @@
 		5A3D98DB2587C98300C737CC /* MiniProjetoUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MiniProjetoUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		5A3D98DF2587C98300C737CC /* MiniProjetoUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MiniProjetoUITests.swift; sourceTree = "<group>"; };
 		5A3D98E12587C98300C737CC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		5A3D98F72587CA9E00C737CC /* ProductsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductsViewController.swift; sourceTree = "<group>"; };
+		5A3D98FC2587D0E400C737CC /* ConnectionManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConnectionManager.swift; sourceTree = "<group>"; };
+		5A3D99012587D2FC00C737CC /* Enums.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Enums.swift; sourceTree = "<group>"; };
+		5A3D99062587D54300C737CC /* ProductsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductsViewModel.swift; sourceTree = "<group>"; };
+		5A3D990B2587E2E900C737CC /* Product.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Product.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -99,10 +105,12 @@
 		5A3D98BC2587C98000C737CC /* MiniProjeto */ = {
 			isa = PBXGroup;
 			children = (
+				5A3D98F32587C9D500C737CC /* Util */,
+				5A3D98F22587C9CA00C737CC /* ViewModels */,
+				5A3D98F12587C9BD00C737CC /* Models */,
+				5A3D98F02587C9B300C737CC /* Views */,
 				5A3D98BD2587C98000C737CC /* AppDelegate.swift */,
 				5A3D98BF2587C98000C737CC /* SceneDelegate.swift */,
-				5A3D98C12587C98000C737CC /* ViewController.swift */,
-				5A3D98C32587C98000C737CC /* Main.storyboard */,
 				5A3D98C62587C98200C737CC /* Assets.xcassets */,
 				5A3D98C82587C98200C737CC /* LaunchScreen.storyboard */,
 				5A3D98CB2587C98200C737CC /* Info.plist */,
@@ -126,6 +134,39 @@
 				5A3D98E12587C98300C737CC /* Info.plist */,
 			);
 			path = MiniProjetoUITests;
+			sourceTree = "<group>";
+		};
+		5A3D98F02587C9B300C737CC /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				5A3D98F72587CA9E00C737CC /* ProductsViewController.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		5A3D98F12587C9BD00C737CC /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				5A3D990B2587E2E900C737CC /* Product.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		5A3D98F22587C9CA00C737CC /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+				5A3D99062587D54300C737CC /* ProductsViewModel.swift */,
+			);
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		5A3D98F32587C9D500C737CC /* Util */ = {
+			isa = PBXGroup;
+			children = (
+				5A3D98FC2587D0E400C737CC /* ConnectionManager.swift */,
+				5A3D99012587D2FC00C737CC /* Enums.swift */,
+			);
+			path = Util;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -233,7 +274,6 @@
 			files = (
 				5A3D98CA2587C98200C737CC /* LaunchScreen.storyboard in Resources */,
 				5A3D98C72587C98200C737CC /* Assets.xcassets in Resources */,
-				5A3D98C52587C98000C737CC /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -258,8 +298,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				5A3D98C22587C98000C737CC /* ViewController.swift in Sources */,
+				5A3D99072587D54300C737CC /* ProductsViewModel.swift in Sources */,
+				5A3D98F82587CA9E00C737CC /* ProductsViewController.swift in Sources */,
+				5A3D98FD2587D0E400C737CC /* ConnectionManager.swift in Sources */,
+				5A3D990C2587E2E900C737CC /* Product.swift in Sources */,
 				5A3D98BE2587C98000C737CC /* AppDelegate.swift in Sources */,
+				5A3D99022587D2FC00C737CC /* Enums.swift in Sources */,
 				5A3D98C02587C98000C737CC /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -296,14 +340,6 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		5A3D98C32587C98000C737CC /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				5A3D98C42587C98000C737CC /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		5A3D98C82587C98200C737CC /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (

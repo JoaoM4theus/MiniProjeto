@@ -105,10 +105,7 @@ class ProductTableViewCell : UITableViewCell {
         cellView.addSubview(productDescriptionLabel)
         cellView.addSubview(productPrice)
         cellView.addSubview(button)
-        
-        
-        
-        
+         
         cellView.anchor(top: topAnchor, left: leftAnchor, bottom: bottomAnchor, right: rightAnchor, paddingTop: 12, paddingLeft: 0, paddingBottom: -12, paddingRight: 0, width: 0, height: 0, enableInsets: false)
         
         productImage.anchor(top: topAnchor, left: leftAnchor, bottom: bottomAnchor, right: productNameLabel.leftAnchor, paddingTop: 0, paddingLeft: 0, paddingBottom: 0, paddingRight: -16, width: self.frame.width * 0.3, height: 200, enableInsets: false)

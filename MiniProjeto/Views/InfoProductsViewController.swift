@@ -8,15 +8,22 @@
 import UIKit
 
 class InfoProductsViewController: UIViewController {
+    lazy var viewModel: InfoProductsViewModel = {
+        
+        let obj = InfoProductsViewModel()
+        obj.delegate = self
+        return obj
+        
+    }()
+//    var product: Product?{
+//        didSet{
+//            productDescriptionLabel.text = product?.descricao
+//            productionNameLabel.text = product?.descricao
+//            productPrice.text = product?.valorVenda
+//            productImage.loadImageUsingCache(withUrl: product?.galeriaProduto ?? "")
+//        }
+//    }
     
-    var product: Product?{
-        didSet{
-            productDescriptionLabel.text = product?.descricao
-            productionNameLabel.text = product?.descricao
-            productPrice.text = product?.valorVenda
-            productImage.loadImageUsingCache(withUrl: product?.galeriaProduto ?? "")
-        }
-    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -78,7 +85,6 @@ class InfoProductsViewController: UIViewController {
         
     }()
     
-
     
     func setupConstraints(){
         
@@ -111,3 +117,18 @@ class InfoProductsViewController: UIViewController {
     }
 }
 
+extension InfoProductsViewController: InfoProductsViewModelDelegate{
+    func setupCellDelegate(cell: UIView) {
+        if let cell = cell as? InfoProductsViewController{
+            d
+        }
+    }
+    
+    func finishFetchProduct() {
+        
+        DispatchQueue.main.async {
+            self.productView.reloadInputViews()
+        }
+        
+    }
+}

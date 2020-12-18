@@ -6,8 +6,13 @@
 //
 
 import Foundation
+import UIKit
 
-struct Product {
+class Product {
+    //    var productImage: UIImage
+    
+    //    var productDesc: String
+    
     var valorVenda: String?
     var valorMinimo: String?
     var id: Int?
@@ -30,8 +35,9 @@ struct Product {
     var informacoesTecnicas: String?
     var codigoGrande: String?
     var valorTabelaPreco: String?
+    var productImg: UIImage?
     
-    init(args: Dictionary<String, Any>?){
+    init(args: Dictionary<String, Any>? ){
         self.valorVenda = args?["valor_venda"] as? String
         self.valorMinimo = args?["valor_minimo"] as? String
         self.id = args?["id"] as? Int
@@ -44,14 +50,32 @@ struct Product {
         self.subGrupoId = args?["subgrupo_id"] as? String
         self.unidade = args?["unidade"] as? String
         self.tipoIdade = args?["tipo_idade"] as? String
-        self.galeriaProduto = args?["galeria_produto"] as? String
+        self.galeriaProduto = args?["galeria_produto"] as? String 
         self.valorMaximo = args?["valor_maximo"] as? String
         self.descricao = args?["descricao"] as? String
         self.estoque = args?["estoque"] as? String
         self.informacoesTecnicas = args?["informacoes_tecnicas"] as? String
         self.codigoGrande = args?["codigo_grande"] as? String
         self.valorTabelaPreco = args?["valor_tabela_preco"] as? String
+        
+        //        loadProductImage()
+        
     }
+    //    func loadProductImage(){
+    //        if let productImageString = self.galeriaProduto,
+    //           let productImageURL = URL(string: productImageString){
+    //
+    //            ConnectionSessionManager.downloadImage(from: productImageURL) { (image, error) in
+    //                if error == nil && image != nil {
+    //                    self.productImg = image
+    //                } else {
+    //                    self.productImg = #imageLiteral(resourceName: "img_logo_reduzida")
+    //                }
+    //            }
+    //        }
+    //    }
     
     
+
+
 }

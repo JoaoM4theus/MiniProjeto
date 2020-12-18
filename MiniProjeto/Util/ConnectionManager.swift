@@ -7,6 +7,8 @@
 
 import Foundation
 
+import UIKit
+
 struct ConnectionSessionManager {
     typealias Callback<T:Any, E:Any> = (T, E) -> Void
     static var session = URLSession.shared
@@ -52,6 +54,29 @@ struct ConnectionSessionManager {
             completion?(nil, error as NSError?)
         }).resume()
     }
+    
+    
+    static func downloadImage(from url: URL, completion: @escaping Callback<UIImage?, Error?>){
+            URLCache.shared.removeAllCachedResponses()
+            
+            let configuration = URLSessionConfiguration.default
+            configuration.timeoutIntervalForRequest = timeOutInterval
+            configuration.timeoutIntervalForResource = timeOutInterval + 5.0
+            let session = URLSession(configuration: configuration)
+            
+            session.dataTask(with: url, completionHandler: { (data, response, error) in
+                DispatchQueue.main.async {
+                    guard let error = error else{
+                        guard let data = data else{
+                            return completion(nil, nil)
+                        }
+                        let image = UIImage(data: data)
+                        return completion(image, nil)
+                    }
+                    completion(nil, error)
+                }
+            }).resume()
+        }
 }
 
 

@@ -8,27 +8,31 @@
 import Foundation
 import UIKit
 
-protocol InfoProductsViewModelDelegate {
-    func finishFetchProduct()
-    func setupCellDelegate(cell: UIView)
+protocol InfoProductViewModelDelegate {
+    func setupCons()
 }
 
 class InfoProductsViewModel{
-    weak var delegate: InfoProductsViewModelDelegate?
+    
+    var delegate: InfoProductViewModelDelegate?
+    
+    init(product: Product) {
+        self.product = product
+    }
     
     
-    var products: Product?
-//        didSet {
-//            self.delegate?.finishFetchProduct()
-//            products?.productImg
-//            products?.descricao
-//            products?.valorVenda
-//        }
+    var product: Product? {
+        didSet {
+            self.delegate?.setupConstraints()
+        }
+    }
     
-    
-    
-    func getProducts(){
-        
+//    func configElementos(){
+//
+//    }
+//
+    func configPrice() -> String{
+        return product?.valorVenda ?? "R$ 0,00"
     }
     
     

@@ -69,7 +69,6 @@ class ProductsViewModel {
             self.delegate?.setupCellDelegate(cell: cell)
             
             cell.contentView.isUserInteractionEnabled = false;
-            
             cell.productNameLabel.text = products?[indexPath.row].descricao
             cell.productDescriptionLabel.text = products?[indexPath.row].descricao
             cell.productPrice.text = products?[indexPath.row].valorVenda
@@ -80,7 +79,6 @@ class ProductsViewModel {
             return cell
         }
         return UITableViewCell()
-        
     }
 }
 

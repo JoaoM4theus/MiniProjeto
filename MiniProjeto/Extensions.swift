@@ -77,3 +77,33 @@ extension UIImageView {
         }).resume()
     }
 }
+//var image: UIImage?
+extension String {
+    func loadImageUsingCache(withUrl urlString : String) -> UIImage {
+        guard let url = URL(string: urlString) else { return #imageLiteral(resourceName: "img_logo_vermelha")}
+//        self.image = nil
+        //check cached image
+        if let cachedImage = imageCache.object(forKey: urlString as NSString) as? UIImage {
+//            self.image = cachedImage
+            return cachedImage
+        }
+
+        // if not, download image from url
+        URLSession.shared.dataTask(with: url, completionHandler: { (data, response, error) in
+            if error != nil {
+                print(error!)
+                return
+            }
+
+            DispatchQueue.main.async {
+                guard let image = UIImage(data: data!) else {
+//                    imageCache.setObject(image, forKey: urlString as NSString)
+                   return
+                }
+                return imageCache.setObject(image, forKey: urlString as NSString)
+            }
+
+        }).resume()
+        return #imageLiteral(resourceName: "img_logo_reduzida")
+    }
+}

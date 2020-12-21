@@ -98,8 +98,7 @@ extension ProductsViewController: ProductViewModelDelegate{
 extension ProductsViewController: ProductTableViewCellDelegate {
     func buttonPressed(product: Product) {
         let vc = InfoProductsViewController()
-        let ab = InfoProductsViewModel(product: product)
-//        vc.product = product
+        vc.viewModel = InfoProductsViewModel(product: product)
         present(vc, animated: true, completion: nil)
         
     }

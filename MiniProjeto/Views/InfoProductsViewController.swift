@@ -10,15 +10,14 @@ import UIKit
 class InfoProductsViewController: UIViewController {
     
     var viewModel: InfoProductsViewModel?
-
-    
-
     
     override func viewDidLoad() {
         
         super.viewDidLoad()
         view.backgroundColor = .white
+        viewModel?.delegate = self
         setupConstraints()
+        
     }
     
     lazy var productionNameLabel : UILabel = {
@@ -39,6 +38,7 @@ class InfoProductsViewController: UIViewController {
         lbl.font = UIFont.boldSystemFont(ofSize: 20)
         lbl.textAlignment = .center
         lbl.numberOfLines = 0
+        lbl.text = viewModel?.configName()
         lbl.translatesAutoresizingMaskIntoConstraints = false
         return lbl
         
@@ -69,6 +69,7 @@ class InfoProductsViewController: UIViewController {
         
         let imgView = UIImageView(image: #imageLiteral(resourceName: "img_bg_login"))
         imgView.contentMode = .scaleAspectFit
+        imgView.image = viewModel?.configImage()
         imgView.translatesAutoresizingMaskIntoConstraints = false
         imgView.clipsToBounds = true
         return imgView
@@ -103,6 +104,8 @@ class InfoProductsViewController: UIViewController {
         self.productPrice.topAnchor.constraint(equalTo: self.productDescriptionLabel.bottomAnchor).isActive = true
         self.productPrice.leadingAnchor.constraint(equalTo: self.view.leadingAnchor).isActive = true
         self.productPrice.trailingAnchor.constraint(equalTo: self.view.trailingAnchor).isActive = true
+        
+        self.reloadInputViews()
         
     }
 }

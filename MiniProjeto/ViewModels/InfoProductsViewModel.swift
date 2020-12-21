@@ -23,7 +23,7 @@ class InfoProductsViewModel{
     
     var product: Product? {
         didSet {
-            self.delegate?.setupConstraints()
+            self.delegate?.setupCons()
         }
     }
     
@@ -31,11 +31,21 @@ class InfoProductsViewModel{
 //
 //    }
 //
-    func configPrice() -> String{
+    func configPrice() -> String {
         return product?.valorVenda ?? "R$ 0,00"
     }
     
+    func configName() -> String {
+        return product?.descricao ?? "Nome invalido"
+    }
     
-    
+    func configImage() -> UIImage{
+       // return product?.galeriaProduto
+        if let productImageURL = product?.galeriaProduto{
+            return productImageURL.loadImageUsingCache(withUrl: productImageURL)
+        }
+        return #imageLiteral(resourceName: "ic_carrinho")
+//        return product?.galeriaProduto?.loadImageUsingCache(withUrl: product?.galeriaProduto ?? ""
+    }
 }
 

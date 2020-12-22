@@ -28,7 +28,7 @@ class ProductsViewModel {
     
     func getProducts(offset: Int = 0){
         let url = "https://softbuilder.com.br/dev-supervisor/api/appplus/request"
-        let args = ["empresa": 1800, "tag": "produto", "offset": offset] as [String : Any]
+        let args = ["empresa": 2800, "tag": "produto", "offset": offset] as [String : Any]
         
         ConnectionSessionManager.invoke(url: url, withArgs: args, httpMethod: .post) { [weak self] (data, error) in
             guard let erro = error else {
@@ -36,15 +36,11 @@ class ProductsViewModel {
                    let products = response["produto"] as? [[String:Any]]{
                     
                     self?.products = products.map{ Product(args: $0) }
-//                    self?.delegate?.finishFetchProduct(products: products.map{Product(args: $0)})
                     
                 }
                 return
             }
-            
         }
-        
-        
     }
     
         func downloadImage(imageURL: String, completion: @escaping(_ image: UIImage) -> ()) {
@@ -71,7 +67,7 @@ class ProductsViewModel {
             cell.contentView.isUserInteractionEnabled = false;
             cell.productNameLabel.text = products?[indexPath.row].descricao
             cell.productDescriptionLabel.text = products?[indexPath.row].descricao
-            cell.productPrice.text = products?[indexPath.row].valorVenda
+            cell.productPrice.text = products?[indexPath.row].valorVenda?.convertToReal
             downloadImage(imageURL: products?[indexPath.row].galeriaProduto ?? ""){image in
                 cell.productImage.image = image
             }

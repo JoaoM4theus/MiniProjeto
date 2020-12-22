@@ -27,10 +27,7 @@ class InfoProductsViewModel{
         }
     }
     
-//    func configElementos(){
-//
-//    }
-//
+    
     func configPrice() -> String {
         return product?.valorVenda ?? "R$ 0,00"
     }
@@ -39,13 +36,14 @@ class InfoProductsViewModel{
         return product?.descricao ?? "Nome invalido"
     }
     
-    func configImage() -> UIImage{
-       // return product?.galeriaProduto
+    func configImage(completion: @escaping(_ image: UIImage) -> ()){
+
         if let productImageURL = product?.galeriaProduto{
-            return productImageURL.loadImageUsingCache(withUrl: productImageURL)
+            productImageURL.loadImageUsingCache(urlString: productImageURL) { (image) in
+                completion(image)
+            }
         }
-        return #imageLiteral(resourceName: "ic_carrinho")
-//        return product?.galeriaProduto?.loadImageUsingCache(withUrl: product?.galeriaProduto ?? ""
+
     }
 }
 

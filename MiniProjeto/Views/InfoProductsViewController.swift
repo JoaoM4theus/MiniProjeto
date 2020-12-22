@@ -27,12 +27,12 @@ class InfoProductsViewController: UIViewController {
         lbl.textAlignment = .center
         lbl.numberOfLines = 3
         lbl.translatesAutoresizingMaskIntoConstraints = false
-   
+        
         return lbl
     }()
     
     lazy var productDescriptionLabel : UILabel = {
-
+        
         let lbl = UILabel()
         lbl.textColor = .black
         lbl.font = UIFont.boldSystemFont(ofSize: 20)
@@ -49,7 +49,7 @@ class InfoProductsViewController: UIViewController {
         let label = UILabel()
         label.font = UIFont.boldSystemFont(ofSize: 20)
         label.textAlignment = .center
-        label.text = viewModel?.configPrice()
+        label.text = viewModel?.configPrice().convertToReal
         label.textColor = .black
         label.translatesAutoresizingMaskIntoConstraints = false
         return label
@@ -67,14 +67,23 @@ class InfoProductsViewController: UIViewController {
     
     lazy var productImage : UIImageView = {
         
-        let imgView = UIImageView(image: #imageLiteral(resourceName: "img_bg_login"))
+        let imgView = UIImageView()
         imgView.contentMode = .scaleAspectFit
-        imgView.image = viewModel?.configImage()
+        
+        getImageProduct()
+        
         imgView.translatesAutoresizingMaskIntoConstraints = false
         imgView.clipsToBounds = true
         return imgView
         
     }()
+    
+    func getImageProduct(){
+        viewModel?.configImage(completion: {(image) in
+            self.productImage.image = image
+            }
+        )
+    }
     
     
     func setupConstraints(){
@@ -105,7 +114,8 @@ class InfoProductsViewController: UIViewController {
         self.productPrice.leadingAnchor.constraint(equalTo: self.view.leadingAnchor).isActive = true
         self.productPrice.trailingAnchor.constraint(equalTo: self.view.trailingAnchor).isActive = true
         
-        self.reloadInputViews()
+//        self.reloadInputViews()
+//        self.loadViewIfNeeded()
         
     }
 }
